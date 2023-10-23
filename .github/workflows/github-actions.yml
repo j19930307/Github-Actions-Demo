@@ -17,6 +17,11 @@ jobs:
       with:
         python-version: '3.9' # 指定您想要使用的 Python 版本
 
+    - name: install python packages
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
     - name: 运行 Python 脚本
       run:
-        python python main.py ${{ secrets.DISCORD_WEBHOOK }}
+        python main.py ${{ secrets.DISCORD_WEBHOOK }}
