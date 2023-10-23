@@ -1,6 +1,7 @@
 import json
 import sys
 import requests
+import os
 
 from SnsInfo import SnsInfo, Profile
 from discord_message import Embed, Author, Image, Message
@@ -42,7 +43,11 @@ def send_message(webhook_url: str, sns_info: SnsInfo):
         print('響應內容：', response.text)
 
 
-webhook = sys.argv[1]
+try:
+    DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
+except KeyError:
+    DISCORD_WEBHOOK = "Token not available!"
+    # or raise an error if it's not available so that the workflow fails
 
-send_message(webhook, SnsInfo("https://www.google.com", Profile("測試", ""),
-                              "測試發送訊息", []))
+send_message(DISCORD_WEBHOOK, SnsInfo("https://www.google.com", Profile("測試", ""),
+                                      "測試發送訊息", []))

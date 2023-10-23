@@ -1,8 +1,8 @@
 name: Scheduled Python Job
 
-on:
-  schedule:
-    - cron: '*/10 * * * *' # 这里的 Cron 表达式会每 10 分钟触发一次
+#on:
+#  schedule:
+#    - cron: '*/10 * * * *'
 
 jobs:
   run-python:
@@ -23,5 +23,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: 运行 Python 脚本
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       run:
-        python main.py ${{ secrets.DISCORD_WEBHOOK }}
+        python main.py
