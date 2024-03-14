@@ -8,8 +8,10 @@ from discord_message import Embed, Author, Image, Message
 import os
 
 try:
-    DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
-    os.environ["DISCORD_WEBHOOK"] = "test"
+    TODAY = os.environ["TODAY"]
+    print(TODAY)
+    os.environ["TODAY"] = "test"
+    print(os.environ["TODAY"])
 except KeyError:
-    DISCORD_WEBHOOK = "Token not available!"
+    TODAY = "Token not available!"
     # or raise an error if it's not available so that the workflow fails
