@@ -10,8 +10,7 @@ jobs:
     - name: Make envfile
       uses: SpicyPizza/create-envfile@v2.0
       with:
-        TODAY: ${{ env.TODAY }}
-        file_name: .env
+        envkey_TODAY: ${{ env.TODAY }}
 
     - name: Checkout代码
       uses: actions/checkout@v2
