@@ -11,7 +11,6 @@ jobs:
       uses: SpicyPizza/create-envfile@v2.0
       with:
         TODAY: ${{ env.TODAY }}
-        directory: <directory_name>
         file_name: .env
 
     - name: Checkout代码
