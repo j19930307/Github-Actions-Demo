@@ -10,7 +10,7 @@ jobs:
     - name: Make envfile
       uses: SpicyPizza/create-envfile@v2.0
       with:
-        envkey_TODAY: ${{ env.TODAY }}
+        envkey_DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
     - name: Checkout代码
       uses: actions/checkout@v2

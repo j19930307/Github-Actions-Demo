@@ -10,6 +10,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 try:
-    print(os.environ["TODAY"])
+    print(os.environ["DISCORD_WEBHOOK"])
 except:
     print("TODAY not found")
