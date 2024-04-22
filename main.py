@@ -1,15 +1,7 @@
-import json
-import sys
-import requests
-import os
-
-from SnsInfo import SnsInfo, Profile
-from discord_message import Embed, Author, Image, Message
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-try:
-    print(os.environ["DISCORD_WEBHOOK"])
-except:
-    print("TODAY not found")
+webhook = os.environ["DISCORD_WEBHOOK"]
+print(type(webhook))
+print(webhook)
