@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v2.0
+      with:
+        TODAY: ${{ env.TODAY }}
+
     - name: Checkout代码
       uses: actions/checkout@v2
 
@@ -21,7 +26,6 @@ jobs:
         pip install -r requirements.txt
 
     - name: 运行 Python 脚本
-      env:
-        TODAY: ${{ env.TODAY }}
+
       run:
         python main.py
